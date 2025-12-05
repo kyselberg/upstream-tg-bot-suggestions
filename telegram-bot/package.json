@@ -15,9 +15,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@upstream/shared": "workspace:*",
     "@grammyjs/types": "^3.22.2",
+    "@upstream/shared": "workspace:*",
     "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.45.0",
     "grammy": "^1.38.4",
     "zod": "^4.1.13"
   },

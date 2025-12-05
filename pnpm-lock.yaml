@@ -133,6 +133,9 @@ importers:
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
+      drizzle-orm:
+        specifier: ^0.45.0
+        version: 0.45.0(@neondatabase/serverless@1.0.2)(@types/pg@8.15.6)
       grammy:
         specifier: ^1.38.4
         version: 1.38.4
