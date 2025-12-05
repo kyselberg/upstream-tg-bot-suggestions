@@ -12,7 +12,20 @@
     "dev:preview": "npm run dev --workspace=idea-preview",
     "build:shared": "npm run build --workspace=packages/shared",
     "build:bot": "npm run build --workspace=telegram-bot",
-    "build:preview": "npm run build --workspace=idea-preview"
+    "build:preview": "npm run build --workspace=idea-preview",
+    "drizzle:generate": "npm run drizzle:generate --workspace=telegram-bot",
+    "drizzle:push": "npm run drizzle:push --workspace=telegram-bot",
+    "lint": "npm run lint --workspace=idea-preview",
+    "lint:fix": "npm run lint:fix --workspace=idea-preview",
+    "format": "npm run format --workspace=idea-preview",
+    "format:fix": "npm run format:fix --workspace=idea-preview",
+    "test": "npm run test --workspace=idea-preview",
+    "test:watch": "npm run test:watch --workspace=idea-preview",
+    "test:coverage": "npm run test:coverage --workspace=idea-preview",
+    "test:coverage:watch": "npm run test:coverage:watch --workspace=idea-preview",
+    "test:coverage:report": "npm run test:coverage:report --workspace=idea-preview",
+    "start:bot": "npm run start --workspace=telegram-bot",
+    "start:preview": "npm run start --workspace=idea-preview"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
