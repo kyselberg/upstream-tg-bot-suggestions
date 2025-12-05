@@ -13,3 +13,5 @@ dist/
 .env.development
 .env.test
 .env.production
+.open-next
+.wrangler

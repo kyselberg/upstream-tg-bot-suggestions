@@ -86,7 +86,7 @@ export default function NewFeedbackPage() {
     const currentAttachments = form.getValues("attachments") || [];
     form.setValue(
       "attachments",
-      currentAttachments.filter((_, i) => i !== index)
+      currentAttachments.filter((_: unknown, i: number) => i !== index)
     );
   };
 

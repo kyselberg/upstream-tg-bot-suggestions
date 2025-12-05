@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     // Handle attachments
     if (validatedData.attachments && validatedData.attachments.length > 0) {
       const attachmentPromises = validatedData.attachments.map(
-        async (attachment) => {
+        async (attachment: { name: string; type: string; size: number; dataUrl: string }) => {
           // Extract base64 data
           const base64Data = attachment.dataUrl.split(",")[1];
           const buffer = Buffer.from(base64Data, "base64");
@@ -80,9 +80,7 @@ export async function POST(request: Request) {
 
           return {
             feedbackId,
-            type: attachment.type.startsWith("image/")
-              ? ("photo" as const)
-              : ("document" as const),
+            type: attachment.type.startsWith("image/") ? "photo" : "document",
             s3Key: key,
           };
         }
