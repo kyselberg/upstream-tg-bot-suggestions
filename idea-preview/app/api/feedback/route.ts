@@ -1,6 +1,6 @@
-import { feedbackSubmissionSchema } from "@upstream/shared";
 import { db, schema } from "@/lib/db";
-import { s3Service, buildAttachmentKey } from "@/lib/s3";
+import { buildAttachmentKey } from "@/lib/s3";
+import { feedbackSubmissionSchema } from "@upstream/shared";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
@@ -57,8 +57,10 @@ export async function POST(request: Request) {
 
           // Upload to S3 using the service's internal method
           // We need to use the S3 client directly for buffer uploads
-          const { S3Client, PutObjectCommand } = await import("@aws-sdk/client-s3");
-          
+          const { S3Client, PutObjectCommand } = await import(
+            "@aws-sdk/client-s3"
+          );
+
           const s3Client = new S3Client({
             region: process.env.S3_REGION!,
             credentials: {
@@ -78,7 +80,9 @@ export async function POST(request: Request) {
 
           return {
             feedbackId,
-            type: attachment.type.startsWith("image/") ? "photo" : "document",
+            type: attachment.type.startsWith("image/")
+              ? ("photo" as const)
+              : ("document" as const),
             s3Key: key,
           };
         }
@@ -108,4 +112,3 @@ export async function POST(request: Request) {
     );
   }
 }
-
