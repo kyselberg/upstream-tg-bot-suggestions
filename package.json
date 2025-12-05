@@ -10,7 +10,7 @@
   "scripts": {
     "dev:bot": "pnpm --filter telegram-bot dev",
     "dev:preview": "pnpm --filter idea-preview dev",
-    "prebuild:bot": "pnpm --filter @upstream/shared build",
+    "build:shared": "pnpm --filter @upstream/shared build",
     "build:bot": "pnpm --filter telegram-bot build",
     "build:preview": "pnpm --filter idea-preview build",
     "drizzle:generate": "pnpm --filter telegram-bot drizzle:generate",
