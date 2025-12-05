@@ -1,0 +1,21 @@
+{
+  "name": "upstream-tg-bot-suggestions-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "telegram-bot",
+    "idea-preview"
+  ],
+  "scripts": {
+    "dev:bot": "npm run dev --workspace=telegram-bot",
+    "dev:preview": "npm run dev --workspace=idea-preview",
+    "build:shared": "npm run build --workspace=packages/shared",
+    "build:bot": "npm run build --workspace=telegram-bot",
+    "build:preview": "npm run build --workspace=idea-preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
+

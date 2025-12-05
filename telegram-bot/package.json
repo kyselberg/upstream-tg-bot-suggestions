@@ -10,19 +10,11 @@
     "drizzle:generate": "drizzle-kit generate",
     "drizzle:push": "drizzle-kit push"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kyselberg/upstream-tg-bot-suggestions.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kyselberg/upstream-tg-bot-suggestions/issues"
-  },
-  "homepage": "https://github.com/kyselberg/upstream-tg-bot-suggestions#readme",
   "dependencies": {
-    "@upstream/shared": "*",
+    "@upstream/shared": "workspace:*",
     "@grammyjs/types": "^3.22.2",
     "dotenv": "^17.2.3",
     "grammy": "^1.38.4",

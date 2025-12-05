@@ -1,0 +1,4 @@
+packages:
+  - "packages/*"
+  - "telegram-bot"
+  - "idea-preview"
