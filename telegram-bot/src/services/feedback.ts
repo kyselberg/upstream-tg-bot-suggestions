@@ -108,7 +108,7 @@ export async function listStats(
   };
 
   for (const row of rows) {
-    const status = row.status ?? "new";
+    const status = (row.status ?? "new") as keyof StatusCounts;
     base[status] = Number(row.count);
   }
 
