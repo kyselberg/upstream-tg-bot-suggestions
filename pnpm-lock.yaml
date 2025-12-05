@@ -44,6 +44,9 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
+      drizzle-orm:
+        specifier: ^0.45.0
+        version: 0.45.0(@neondatabase/serverless@1.0.2)(@types/pg@8.15.6)
       lucide-react:
         specifier: ^0.556.0
         version: 0.556.0(react@19.2.0)
