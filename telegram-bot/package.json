@@ -1,0 +1,38 @@
+{
+  "name": "upstream-tg-bot-suggestions",
+  "version": "1.0.0",
+  "description": "Telegram feedback bot for church suggestions",
+  "type": "module",
+  "main": "dist/bot.js",
+  "scripts": {
+    "dev": "tsx src/bot.ts",
+    "start": "NODE_ENV=production tsx src/bot.ts",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:push": "drizzle-kit push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyselberg/upstream-tg-bot-suggestions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyselberg/upstream-tg-bot-suggestions/issues"
+  },
+  "homepage": "https://github.com/kyselberg/upstream-tg-bot-suggestions#readme",
+  "dependencies": {
+    "@upstream/shared": "*",
+    "@grammyjs/types": "^3.22.2",
+    "dotenv": "^17.2.3",
+    "grammy": "^1.38.4",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "drizzle-kit": "^0.31.8",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
