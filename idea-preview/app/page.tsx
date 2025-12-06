@@ -14,17 +14,27 @@ import { desc } from "drizzle-orm";
 import Link from "next/link";
 
 export default async function Home() {
-  const allFeedback = await db.query.feedback.findMany({
-    orderBy: [
-      desc(schema.feedback.likesCount),
-      desc(schema.feedback.createdAt),
-    ],
-    limit: 50,
-    with: {
-      user: true,
-      attachments: true,
-    },
-  });
+  let allFeedback;
+  let error: Error | null = null;
+  
+  try {
+    allFeedback = await db.query.feedback.findMany({
+      orderBy: [
+        desc(schema.feedback.likesCount),
+        desc(schema.feedback.createdAt),
+      ],
+      limit: 50,
+      with: {
+        user: true,
+        attachments: true,
+      },
+    });
+  } catch (err) {
+    console.error("Error fetching feedback:", err);
+    error = err instanceof Error ? err : new Error(String(err));
+    // Return empty array on error to prevent Internal Server Error
+    allFeedback = [];
+  }
 
   const feedbackTypeLabels: Record<
     string,
@@ -63,7 +73,16 @@ export default async function Home() {
           </p>
         </header>
 
-        {allFeedback.length === 0 ? (
+        {error ? (
+          <div className="text-center py-12">
+            <p className="text-destructive mb-2">Помилка завантаження відгуків</p>
+            <p className="text-sm text-muted-foreground">
+              {process.env.NODE_ENV === "development" 
+                ? error.message 
+                : "Будь ласка, спробуйте пізніше"}
+            </p>
+          </div>
+        ) : allFeedback.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-muted-foreground">Відгуки не знайдено</p>
           </div>
