@@ -15,7 +15,7 @@ export default function BottomNav() {
 
   const navItems = [
     {
-      href: "/feedback",
+      href: "/",
       label: "Всі відгуки",
       icon: ListIcon,
     },
@@ -37,7 +37,9 @@ export default function BottomNav() {
         )}
         
         {navItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = item.href === "/" 
+            ? pathname === "/" 
+            : pathname === item.href;
           const Icon = item.icon;
           
           return (
