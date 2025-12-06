@@ -80,7 +80,7 @@ export async function POST(request: Request) {
 
           return {
             feedbackId,
-            type: attachment.type.startsWith("image/") ? "photo" : "document",
+            type: (attachment.type.startsWith("image/") ? "photo" : "document") as "photo" | "document" | "other",
             s3Key: key,
           };
         }
