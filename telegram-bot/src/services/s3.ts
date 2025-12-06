@@ -25,7 +25,7 @@ function extractBucketName(value: string): string {
   return value;
 }
 
-export const s3Service = new S3Service({
+const s3Service = new S3Service({
   region: env.S3_REGION,
   bucket: extractBucketName(env.S3_BUCKET),
   accessKeyId: env.AWS_ACCESS_KEY_ID,

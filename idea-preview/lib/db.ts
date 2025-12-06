@@ -2,7 +2,7 @@ import { createDb, schema } from "@upstream/shared";
 
 let _db: ReturnType<typeof createDb> | null = null;
 
-export function getDb() {
+function getDb() {
   if (!_db) {
     if (!process.env.DATABASE_URL) {
       throw new Error("DATABASE_URL is not set");

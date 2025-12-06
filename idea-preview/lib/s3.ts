@@ -26,7 +26,7 @@ function extractBucketName(value: string): string {
 
 let _s3Service: S3Service | null = null;
 
-export function getS3Service() {
+function getS3Service() {
   if (!_s3Service) {
     if (!process.env.AWS_ACCESS_KEY_ID || !process.env.AWS_SECRET_ACCESS_KEY || !process.env.S3_BUCKET || !process.env.S3_REGION) {
       throw new Error("S3 configuration is missing");

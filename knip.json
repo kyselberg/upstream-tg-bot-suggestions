@@ -1,0 +1,19 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignoreExportsUsedInFile": {
+    "interface": true,
+    "type": true
+  },
+  "tags": [
+    "-lintignore"
+  ],
+  "workspaces": {
+    ".": {
+      "ignore": ["idea-preview/open-next.config.ts"]
+    },
+    "idea-preview": {
+      "ignoreDependencies": ["zod"],
+      "ignore": ["components/ui/**"]
+    }
+  }
+}

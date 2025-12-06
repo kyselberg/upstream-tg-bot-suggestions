@@ -13,7 +13,7 @@
     "@aws-sdk/s3-request-presigner": "^3.943.0",
     "@neondatabase/serverless": "^1.0.2",
     "drizzle-orm": "^0.45.0",
-    "zod": "^4.1.13"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

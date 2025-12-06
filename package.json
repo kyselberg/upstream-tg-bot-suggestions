@@ -25,10 +25,12 @@
     "test:coverage:watch": "pnpm --filter idea-preview test:coverage:watch",
     "test:coverage:report": "pnpm --filter idea-preview test:coverage:report",
     "start:bot": "pnpm --filter telegram-bot start",
-    "start:preview": "pnpm --filter idea-preview start"
+    "start:preview": "pnpm --filter idea-preview start",
+    "knip": "knip"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
+    "knip": "^5.71.0",
     "typescript": "^5.9.3"
   }
 }

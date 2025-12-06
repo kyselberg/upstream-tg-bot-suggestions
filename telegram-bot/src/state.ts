@@ -46,7 +46,7 @@ export const initialSession = (): SessionData => ({
   attachments: [],
 });
 
-export const BUTTON_LOOKUP = {
+const BUTTON_LOOKUP = {
   identity: IDENTITY_BUTTONS,
   relation: RELATION_BUTTONS,
   feedbackType: FEEDBACK_TYPE_BUTTONS,
